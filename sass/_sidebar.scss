@@ -2,5 +2,6 @@
 
 .sidebar {
   background-color: $color-primary;
-  // grid-row: 1 / span 5;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
 }

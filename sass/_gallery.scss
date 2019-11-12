@@ -71,9 +71,9 @@
   }
 
   &__img {
-    width: 100%;
+    width: 100%;  //must include both height and width for object-fit to work
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;   // this is a key property adjust picture to grid size and keep aspect ratio
     display: block;
   }
 }

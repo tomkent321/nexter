@@ -10,10 +10,14 @@ $color-grey-light-2: #aaa;
 $color-grey-dark-1: #54483a;
 $color-grey-dark-2: #6d5d4b;
 
-
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+// MEDIA BREAKPOINTS
+
+$bp-1200: 75em;
+$bp-1000: 62.5em;
 
 *,
 *::before,
@@ -25,31 +29,42 @@ $font-display: 'Josefin Sans', sans-serif;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; // 1 rem = 10px
+  font-size: 62.5%; // 1 rem = 10px   This is the overall font size for the whole page
+
+  @media only screen and (max-width: $bp-1200) {
+    font-size: 50%;
+  }
 }
 
 body {
   font-family: $font-primary;
   color: $color-grey-dark-2;
   font-weight: 300;
-  line-height: 1.6;    //note:  not rem!
-
-
-  
-  
+  line-height: 1.6; //note:  not rem!
 }
 
 .container {
-
   display: grid;
 
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    ) [center-end] minmax(6rem, 1fr)
+    [full-end];
 
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem )[col-end]) [center-end] minmax(6rem,1fr) [full-end];
+  @media only screen and (max-width: $bp-1200) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
 
-
-  // temp
-
-    
+    grid-template-columns:
+      [sidebar-start full-start] minmax(6rem, 1fr)
+      [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      ) [center-end] minmax(6rem, 1fr)
+      [sidebar-end full-end];
+  }
 }

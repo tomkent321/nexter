@@ -54,7 +54,6 @@
   cursor: pointer;
   transition: all 0.2s;
   // align-self: flex-start;
-  
 
   &:hover {
     background-color: $color-primary-dark;
@@ -62,14 +61,14 @@
 }
 
 .mb-2 {
-  margin-bottom: 2rem;    //sm
+  margin-bottom: 2rem; //sm
 }
 .mb-3 {
-  margin-bottom: 3rem;    //md
+  margin-bottom: 3rem; //md
 }
 .mb-4 {
-  margin-bottom: 4rem;    //lg
+  margin-bottom: 4rem; //lg
 }
 .mb-8 {
-  margin-bottom: 8rem;     //bg
+  margin-bottom: 8rem; //bg
 }

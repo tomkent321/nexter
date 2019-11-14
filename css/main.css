@@ -29,9 +29,9 @@ body {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 80vh min-content 40vw (min-content)[3];
-      grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
-      grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  -ms-grid-rows: 80vh min-content 40vw min-content (min-content)[3];
+      grid-template-rows: 80vh -webkit-min-content 40vw -webkit-min-content repeat(3, -webkit-min-content);
+      grid-template-rows: 80vh min-content 40vw min-content repeat(3, min-content);
   -ms-grid-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] ([col-start] minmax(min-content, 14rem) [col-end])[8] [center-end] minmax(6rem, 1fr) [full-end];
       grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
       grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
@@ -39,9 +39,9 @@ body {
 
 @media only screen and (max-width: 75em) {
   .container {
-    -ms-grid-rows: 6rem 80vh min-content 40vw (min-content)[3];
-        grid-template-rows: 6rem 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
-        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    -ms-grid-rows: 6rem 80vh min-content 40vw min-content (min-content)[3];
+        grid-template-rows: 6rem 80vh -webkit-min-content 40vw -webkit-min-content repeat(3, -webkit-min-content);
+        grid-template-rows: 6rem 80vh min-content 40vw min-content repeat(3, min-content);
     -ms-grid-columns: [sidebar-start full-start] minmax(6rem, 1fr) [center-start] ([col-start] minmax(min-content, 14rem) [col-end])[8] [center-end] minmax(6rem, 1fr) [sidebar-end full-end];
         grid-template-columns: [sidebar-start full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [sidebar-end full-end];
         grid-template-columns: [sidebar-start full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [sidebar-end full-end];
@@ -430,15 +430,6 @@ body {
           box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (max-width: 50em) {
-  .story__img--1 {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-    grid-column: 1 / 5;
-    grid-row: 1 / -1;
-  }
-}
-
 .story__img--2 {
   width: 115%;
   -ms-grid-row: 4;
@@ -489,12 +480,23 @@ body {
 .homes {
   grid-column: center-start / center-end;
   grid-row: max-content;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / 5;
   margin: 15rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem;
+}
+
+@media only screen and (max-width: 75em) {
+  .homes {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 / 6;
+  }
 }
 
 .home {

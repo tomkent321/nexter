@@ -57,7 +57,10 @@ body {
     [full-end];
 
   @media only screen and (max-width: $bp-1200) {
-    grid-template-rows: 6rem 80vh min-content 40vw min-content repeat(3, min-content);
+    grid-template-rows: 6rem 80vh min-content 40vw min-content repeat(
+        3,
+        min-content
+      );
 
     grid-template-columns:
       [sidebar-start full-start] minmax(6rem, 1fr)
@@ -67,10 +70,6 @@ body {
   }
 
   @media only screen and (max-width: $bp-800) {
-   
-
     grid-template-rows: 6rem calc(100vh - 6rem);
-
-    
   }
 }
